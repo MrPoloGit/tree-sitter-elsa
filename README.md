@@ -40,3 +40,8 @@ console.log(tree.rootNode.toString());
 | Line comments | `-- comment` |
 | Block comments | `{- comment -}` |
 | Identifiers | letters, digits, `_`, `#`, `'` |
+
+### Related resources
+- https://github.com/ucsd-progsys/elsa
+- https://hackage-content.haskell.org/package/elsa-0.3.0.0/docs/doc-index.html
+- https://elsa.goto.ucsd.edu/index.html
