@@ -1,0 +1,17 @@
+-- Church numerals
+
+let id   = \x -> x
+let zero = \f x -> x
+let one  = \f x -> f x
+let succ = \n f x -> f (n f x)
+
+eval succ_zero :
+  succ zero
+  =d> (\n f x -> f (n f x)) (\f x -> x)
+  =b> \f x -> f ((\f x -> x) f x)
+  =b> \f x -> f x
+  =d> one
+
+conf omega :
+  (\x -> x x) (\x -> x x)
+  =b> (\x -> x x) (\x -> x x)

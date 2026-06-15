@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0" # weekly
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - name: Checkout tree-sitter-elsa
+        uses: actions/checkout@v4
+
+      - name: Setup tree-sitter
+        uses: tree-sitter/setup-action@v2
+
+      - name: Generate parser
+        run: tree-sitter generate
+
+      - name: Run parse tests
+        run: tree-sitter test
+
+      - name: Run highlight tests
+        run: tree-sitter highlight --paths test/highlight_paths_file.txt
