@@ -1,0 +1,47 @@
+{
+  "name": "tree-sitter-elsa",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for the Elsa lambda calculus language",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "parser",
+    "tree-sitter",
+    "elsa",
+    "lambda-calculus"
+  ],
+  "author": "MrPoloGit",
+  "license": "MIT",
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.0"
+  },
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp build",
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.elsa",
+      "file-types": [
+        "lc"
+      ],
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "elsa"
+    }
+  ]
+}

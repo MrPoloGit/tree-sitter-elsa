@@ -1,0 +1,23 @@
+{
+  "grammars": [
+    {
+      "name": "elsa",
+      "scope": "source.elsa",
+      "path": ".",
+      "file-types": ["lc"],
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "elsa"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for the Elsa lambda calculus language",
+    "author": {
+      "name": "MrPoloGit"
+    },
+    "links": {
+      "repository": "https://github.com/MrPoloGit/tree-sitter-elsa"
+    }
+  }
+}
