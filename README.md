@@ -40,11 +40,3 @@ console.log(tree.rootNode.toString());
 | Line comments | `-- comment` |
 | Block comments | `{- comment -}` |
 | Identifiers | letters, digits, `_`, `#`, `'` |
-
-## Development
-
-```bash
-npm install
-tree-sitter generate
-tree-sitter test
-```
